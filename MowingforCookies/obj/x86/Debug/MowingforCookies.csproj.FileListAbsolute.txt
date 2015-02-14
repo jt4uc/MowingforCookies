@@ -1,0 +1,13 @@
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\SDL.dll
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MowingforCookies.exe
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MowingforCookies.pdb
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Lidgren.Network.dll
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MonoGame.Framework.dll
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\OpenTK.dll
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Tao.Sdl.dll
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.csprojResolveAssemblyReference.cache
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.exe
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.pdb
+c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MowingforCookiesBackground.png
+C:\Users\Tyty\Documents\Visual Studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MiniMower.png
+C:\Users\Tyty\Documents\Visual Studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Patch.png

@@ -41,6 +41,11 @@ namespace MowingforCookies
            
         }
 
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Draw(image, new Rectangle(spriteX, spriteY, spriteWidth, spriteHeight), Color.White);
+        }
+
         //Initialized
 
         public bool mowerHasTraversed(){

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
+
 namespace MowingforCookies
 {
     class Spot : Sprite
@@ -25,6 +31,15 @@ namespace MowingforCookies
             this.cookiesGained = cookiesGained;
             this.ob = ob;
         }
+        public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained)
+        {
+            this.x = x;
+            this.y = y;
+            this.isTraversed = isTraversed;
+            this.travelCost = travelCost;
+            this.cookiesGained = cookiesGained;
+           
+        }
 
         //Initialized
 
@@ -37,6 +52,12 @@ namespace MowingforCookies
         //draw
 
         //traversedEffect
+
+        public void LoadContent(ContentManager content)
+        {
+            image = content.Load<Texture2D>("patch.png");
+        }
+
 
         public Obstacle getObstacle()
         {

@@ -20,6 +20,7 @@ namespace MowingforCookies
         public int cookiesGained;
         public Obstacle ob;
         //tileTexture: Texture2D
+        private Rectangle collisionBox;
 
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained
             , Obstacle ob)
@@ -30,6 +31,8 @@ namespace MowingforCookies
             this.travelCost = travelCost;
             this.cookiesGained = cookiesGained;
             this.ob = ob;
+
+            this.collisionBox = new Rectangle(200, 200, 50, 50);
         }
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained)
         {
@@ -38,12 +41,20 @@ namespace MowingforCookies
             this.isTraversed = isTraversed;
             this.travelCost = travelCost;
             this.cookiesGained = cookiesGained;
+            this.ob = null;
+
+            this.collisionBox = new Rectangle(200, 200, 50, 50);
            
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            image = content.Load<Texture2D>("Patch.png");
         }
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle(spriteX, spriteY, spriteWidth, spriteHeight), Color.White);
+            sb.Draw(image, new Rectangle(x, y, 50, 50), Color.Red);
         }
 
         //Initialized
@@ -52,16 +63,14 @@ namespace MowingforCookies
             return this.isTraversed;
         }
 
-        //update
+        public void Update()
+        {
 
-        //draw
+        }
 
         //traversedEffect
 
-        public void LoadContent(ContentManager content)
-        {
-            image = content.Load<Texture2D>("patch.png");
-        }
+
 
 
         public Obstacle getObstacle()
@@ -72,6 +81,10 @@ namespace MowingforCookies
         public void setObstacle(Obstacle ob)
         {
             this.ob = ob;
+        }
+        public Rectangle getBox()
+        {
+            return collisionBox;
         }
 
 

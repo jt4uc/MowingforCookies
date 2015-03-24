@@ -49,12 +49,12 @@ namespace MowingforCookies
 
         public void LoadContent(ContentManager content)
         {
-            image = content.Load<Texture2D>("Patch.png");
+            image = content.Load<Texture2D>("grass.png");
         }
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle(x, y, 50, 50), Color.Red);
+            sb.Draw(image, new Rectangle(x, y, 50, 50), Color.White);
         }
 
         //Initialized

@@ -11,3 +11,18 @@ c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCo
 c:\users\tyty\documents\visual studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MowingforCookiesBackground.png
 C:\Users\Tyty\Documents\Visual Studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MiniMower.png
 C:\Users\Tyty\Documents\Visual Studio 2013\Projects\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Patch.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.exe
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.pdb
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MiniMower.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\MowingforCookiesBackground.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Patch.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\SDL.dll
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MowingforCookies.exe
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MowingforCookies.pdb
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.csprojResolveAssemblyReference.cache
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\grass.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\white.png

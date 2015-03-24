@@ -26,8 +26,6 @@ namespace MowingforCookies
 
         Player player;
         Controls controls;
-
-        List<Rectangle> patches;
         List<Spot> patches2;
         Texture2D patch;
 
@@ -73,7 +71,7 @@ namespace MowingforCookies
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            background = Content.Load<Texture2D>("MowingforCookiesBackground");
+            background = Content.Load<Texture2D>("white.png");
             patch = Content.Load<Texture2D>("MiniMower.png");
             foreach (Spot s in patches2)
             {
@@ -140,14 +138,6 @@ namespace MowingforCookies
                 base.Draw(gameTime);
         }
 
-        private void DrawGrass()
-        {
-            foreach (Rectangle r in patches)
-            {
-                spriteBatch.Draw(patch, r, Color.White);
-            }
-
-        }
         private void DrawBackground()
         {
             Rectangle screenRectangle = new Rectangle(0, 0, 800, 600);

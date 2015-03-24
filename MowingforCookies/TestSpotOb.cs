@@ -49,10 +49,10 @@ namespace MowingforCookies
             player = new Player(210, 210, 30, 30);
             patches2 = new List<Spot>();
             
-            for (int row = 100; row < 500; row += 50) {
-                for (int col = 50; col < 350; col += 100)
+            for (int row = 100; row < 670; row += 110) {
+                for (int col = 50; col < 300; col += 110)
                 {
-                    Spot t = new Spot(row,col,false,3,3,row,col);
+                    Spot t = new Spot(row,col,false,3,3);
                     patches2.Add(t);
                     
                 }
@@ -129,7 +129,7 @@ namespace MowingforCookies
 
         private void DrawBackground()
         {
-            Rectangle screenRectangle = new Rectangle(0, 0, 800, 600);
+            Rectangle screenRectangle = new Rectangle(0, 0, 800, 800);
             spriteBatch.Draw(background, screenRectangle, Color.White);
 
         }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -23,10 +25,8 @@ namespace MowingforCookies
         //tileTexture: Texture2D
 
         private Rectangle collisionBox;
-        public int cbWidth = 150;
-        public int cbHeight = 150;
-        //public int cbX;
-        //public int cbY;
+        public int cbWidth = 100;
+        public int cbHeight = 100;
 
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained
             , int cbX, int cbY, Obstacle ob)
@@ -38,9 +38,10 @@ namespace MowingforCookies
             this.cookiesGained = cookiesGained;
             this.ob = ob;
 
-            this.collisionBox = new Rectangle(cbX, cbY, cbWidth, cbHeight); //should be x and y?
+            this.collisionBox = new Rectangle(x, y, cbWidth, cbHeight);
+           
         }
-        public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained, int cbX, int cbY)
+        public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained)
         {
             this.x = x;
             this.y = y;
@@ -49,7 +50,7 @@ namespace MowingforCookies
             this.cookiesGained = cookiesGained;
             this.ob = null;
 
-            this.collisionBox = new Rectangle(cbX, cbY, cbWidth, cbHeight);
+            this.collisionBox = new Rectangle(x, y, cbWidth, cbHeight);
            
         }
 
@@ -60,7 +61,7 @@ namespace MowingforCookies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle(x, y, 150, 150), Color.Yellow);
+            sb.Draw(image, new Rectangle(x, y, 100, 100), Color.White);
         }
 
         //Initialized

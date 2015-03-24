@@ -47,18 +47,17 @@ namespace MowingforCookies
 
             Window.Title = "TEST";
             player = new Player(210, 210, 30, 30);
-           // patches = new List<Rectangle>();
-           // for (int r = 101; r < 400; r += 50)
-           // {
-           //     for (int c = 201; c < 600; c += 50)
-          //      {
-          //          Rectangle p = new Rectangle(c, r, 48, 48);
-           //         patches.Add(p);
-           //     }
-          //  }
             patches2 = new List<Spot>();
-            Spot t = new Spot(210, 210, false, 3, 3);
-            patches2.Add(t);
+            
+            for (int row = 100; row < 500; row += 50) {
+                for (int col = 50; col < 350; col += 100)
+                {
+                    Spot t = new Spot(row,col,false,3,3);
+                    patches2.Add(t);
+                    
+                }
+            }
+
             base.Initialize();
             controls = new Controls();
         }
@@ -72,7 +71,7 @@ namespace MowingforCookies
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             background = Content.Load<Texture2D>("white.png");
-            patch = Content.Load<Texture2D>("MiniMower.png");
+            patch = Content.Load<Texture2D>("Patch.png");
             foreach (Spot s in patches2)
             {
                 s.LoadContent(this.Content);
@@ -101,17 +100,8 @@ namespace MowingforCookies
             controls.Update();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-          //  player.Update(controls, gameTime);
-       //     int i = 0;
-        //    foreach (Rectangle r in patches)
-       //     {
-        //        if (r.Intersects(player.getBox()))
-       //         {
-       //             patches.RemoveAt(i);
-       //             break;
-       //         }
-       //         i++;
-       //     }
+            player.Update(controls, gameTime);
+
             base.Update(gameTime);
         }
 
@@ -125,8 +115,7 @@ namespace MowingforCookies
             GraphicsDevice.Clear(Color.LimeGreen);
             spriteBatch.Begin();
             DrawBackground();
-           // DrawGrass();
-          //  player.Draw(spriteBatch);
+            player.Draw(spriteBatch);
 
             foreach (Spot s in patches2)
             {

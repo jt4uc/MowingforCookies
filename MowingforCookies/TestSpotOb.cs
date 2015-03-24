@@ -52,7 +52,7 @@ namespace MowingforCookies
             for (int row = 100; row < 500; row += 50) {
                 for (int col = 50; col < 350; col += 100)
                 {
-                    Spot t = new Spot(row,col,false,3,3);
+                    Spot t = new Spot(row,col,false,3,3,row,col);
                     patches2.Add(t);
                     
                 }

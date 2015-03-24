@@ -14,11 +14,11 @@ namespace MowingforCookies
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class MowingforCookiesMain : Game
+    public class TestSpotOb : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+
         // for the background
         Texture2D background;
         int screenWidth;
@@ -26,11 +26,10 @@ namespace MowingforCookies
 
         Player player;
         Controls controls;
-
-        List<Rectangle> patches;
+        List<Spot> patches2;
         Texture2D patch;
 
-        public MowingforCookiesMain()
+        public TestSpotOb()
             : base()
         {
             graphics = new GraphicsDeviceManager(this); /// default is 800x600
@@ -45,46 +44,24 @@ namespace MowingforCookies
         /// </summary>
         protected override void Initialize()
         {
-            
-            Window.Title = "Mowing for Cookies";
-            player = new Player(210, 210, 30, 30);
-            patches = new List<Rectangle>();
-            for (int r = 101; r < 400; r += 50)
-            {
-                for (int c = 201; c < 600; c += 50)
-                {
-                    Rectangle p = new Rectangle(c, r, 48, 48);
-                    patches.Add(p);
-                }
-            }
-            base.Initialize();
-            controls = new Controls();
-        }
-    
 
-        /*
-         *         protected override void Initialize()
-        {
-            
-            Window.Title = "Mowing for Cookies";
+            Window.Title = "TEST";
             player = new Player(210, 210, 30, 30);
-            patches = new List<Spot>();
-            for (int r = 0; r < 8; r += 1)
-            {
-                for (int c = 0; c < 6; c += 1)
+            patches2 = new List<Spot>();
+            
+            for (int row = 100; row < 500; row += 50) {
+                for (int col = 50; col < 350; col += 100)
                 {
-                    //Spot = public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained, Obstacle ob)
-                    //Spot = public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained)
-                    //Obstacle = public Obstacle(Spot currentLocation, String obstacleType)
+                    Spot t = new Spot(row,col,false,3,3,row,col);
+                    patches2.Add(t);
                     
-                    Spot p = new Spot(c, r, 48, 48);
-                    patches.Add(p);
                 }
             }
+
             base.Initialize();
             controls = new Controls();
         }
-    */
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -93,8 +70,12 @@ namespace MowingforCookies
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            background = Content.Load<Texture2D>("MowingforCookiesBackground");
-            patch = Content.Load<Texture2D>("Patch");    
+            background = Content.Load<Texture2D>("white.png");
+            patch = Content.Load<Texture2D>("Patch.png");
+            foreach (Spot s in patches2)
+            {
+                s.LoadContent(this.Content);
+            }
             player.LoadContent(this.Content);
             // TODO: use this.Content to load your game content here
         }
@@ -115,20 +96,12 @@ namespace MowingforCookies
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            
-            controls.Update();   
+
+            controls.Update();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             player.Update(controls, gameTime);
-            int i = 0;
-            foreach(Rectangle r in patches)
-            {
-                if (r.Intersects(player.getBox())) {
-                    patches.RemoveAt(i);
-                    break;
-                }
-                i++;
-            }
+
             base.Update(gameTime);
         }
 
@@ -142,24 +115,21 @@ namespace MowingforCookies
             GraphicsDevice.Clear(Color.LimeGreen);
             spriteBatch.Begin();
             DrawBackground();
-            DrawGrass();
             player.Draw(spriteBatch);
-            spriteBatch.End();
-            
 
-            base.Draw(gameTime);
-        }
-    
-        private void DrawGrass()
-        {
-            foreach (Rectangle r in patches) {
-                spriteBatch.Draw(patch, r, Color.White);
+            foreach (Spot s in patches2)
+            {
+                s.Draw(spriteBatch);
             }
+            spriteBatch.End();
 
+
+                base.Draw(gameTime);
         }
+
         private void DrawBackground()
         {
-            Rectangle screenRectangle = new Rectangle(0, 0, 800, 600); 
+            Rectangle screenRectangle = new Rectangle(0, 0, 800, 600);
             spriteBatch.Draw(background, screenRectangle, Color.White);
 
         }

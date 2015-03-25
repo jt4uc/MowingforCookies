@@ -18,6 +18,7 @@ namespace MowingforCookies
         public int x;
         public int y;
         public bool isTraversed;
+        public bool canTraverse;
         public int travelCost; //of cookies
         public int cookiesGained;
         public Obstacle ob;
@@ -37,9 +38,15 @@ namespace MowingforCookies
             this.travelCost = travelCost;
             this.cookiesGained = cookiesGained;
             this.ob = ob;
+            this.canTraverse = true;
+            if (ob.canTraverse == false)
+            {
+                this.canTraverse = false;
+            }
+
 
             this.collisionBox = new Rectangle(x, y, cbWidth, cbHeight);
-           
+
         }
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained)
         {
@@ -49,9 +56,10 @@ namespace MowingforCookies
             this.travelCost = travelCost;
             this.cookiesGained = cookiesGained;
             this.ob = null;
+            this.canTraverse = true;
 
             this.collisionBox = new Rectangle(x, y, cbWidth, cbHeight);
-           
+
         }
 
         public void LoadContent(ContentManager content)
@@ -64,9 +72,8 @@ namespace MowingforCookies
             sb.Draw(image, new Rectangle(x, y, 100, 100), Color.White);
         }
 
-        //Initialized
-
-        public bool mowerHasTraversed(){
+        public bool mowerHasTraversed()
+        {
             return this.isTraversed;
         }
 
@@ -75,7 +82,25 @@ namespace MowingforCookies
 
         }
 
-        //traversedEffect
+        public void traverseEffect(Obstacle o)
+        {
+            String oType = o.obstacleType;
+            switch (oType)
+            {
+                case "tree":
+                    break;
+                case "water":
+                    break;
+                case "gravel":
+                    break;
+                case "bush":
+                    break;
+                case "grandma":
+                    break;
+                case "fence":
+                    break;
+            }
+        }
 
 
 
@@ -88,6 +113,11 @@ namespace MowingforCookies
         public void setObstacle(Obstacle ob)
         {
             this.ob = ob;
+            if (ob.canTraverse == false)
+            {
+                this.canTraverse = false;
+            }
+
         }
         public Rectangle getBox()
         {

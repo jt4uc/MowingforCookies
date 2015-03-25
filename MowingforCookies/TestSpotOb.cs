@@ -25,9 +25,10 @@ namespace MowingforCookies
         int screenHeight;
 
         Player player;
-        Mower mower;
         Controls controls;
         List<Spot> patches2;
+        Mower mower;
+
         Texture2D patch;
 
         public TestSpotOb()
@@ -48,17 +49,25 @@ namespace MowingforCookies
 
             Window.Title = "TEST";
             player = new Player(210, 210, 30, 30);
-            
             patches2 = new List<Spot>();
-            
-            for (int row = 100; row < 670; row += 110) {
+
+            for (int row = 100; row < 670; row += 110)
+            {
                 for (int col = 50; col < 300; col += 110)
                 {
-                    Spot t = new Spot(row,col,false,3,3);
+                    Spot t = new Spot(row, col, false, 3, 3);
                     patches2.Add(t);
+
                 }
             }
             mower = new Mower(patches2[0], 0);
+
+            Obstacle test = new Obstacle("tree");
+            patches2[2].setObstacle(test);
+            test.setSpot(patches2[2]);
+            Obstacle test2 = new Obstacle("gravel");
+            patches2[3].setObstacle(test2);
+            test2.setSpot(patches2[3]);
 
             base.Initialize();
             controls = new Controls();
@@ -77,6 +86,10 @@ namespace MowingforCookies
             foreach (Spot s in patches2)
             {
                 s.LoadContent(this.Content);
+                if (s.ob != null)
+                {
+                    s.ob.LoadContent(this.Content);
+                }
             }
             player.LoadContent(this.Content);
             mower.LoadContent(this.Content);
@@ -104,9 +117,7 @@ namespace MowingforCookies
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             player.Update(controls, gameTime);
-           
             mower.Update(controls, patches2, gameTime);
-
             base.Update(gameTime);
         }
 
@@ -124,15 +135,16 @@ namespace MowingforCookies
             foreach (Spot s in patches2)
             {
                 s.Draw(spriteBatch);
+                if (s.ob != null)
+                {
+                    s.ob.Draw(spriteBatch);
+                }
             }
-
-            //player.Draw(spriteBatch);
             mower.Draw(spriteBatch);
-            
             spriteBatch.End();
 
 
-                base.Draw(gameTime);
+            base.Draw(gameTime);
         }
 
         private void DrawBackground()

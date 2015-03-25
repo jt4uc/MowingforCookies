@@ -41,3 +41,9 @@ C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\Mowing
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Tao.Sdl.dll
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.csprojResolveAssemblyReference.cache
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\bush.png
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\grandma.png
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\gravel.png
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Oak-Tree-Sprite.png
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\PlayerSquare.png
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\water.png

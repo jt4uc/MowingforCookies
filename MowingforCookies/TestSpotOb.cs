@@ -25,6 +25,7 @@ namespace MowingforCookies
         int screenHeight;
 
         Player player;
+        Mower mower;
         Controls controls;
         List<Spot> patches2;
         Texture2D patch;
@@ -47,6 +48,7 @@ namespace MowingforCookies
 
             Window.Title = "TEST";
             player = new Player(210, 210, 30, 30);
+            
             patches2 = new List<Spot>();
             
             for (int row = 100; row < 670; row += 110) {
@@ -54,9 +56,9 @@ namespace MowingforCookies
                 {
                     Spot t = new Spot(row,col,false,3,3);
                     patches2.Add(t);
-                    
                 }
             }
+            mower = new Mower(patches2[0], 0);
 
             base.Initialize();
             controls = new Controls();
@@ -77,6 +79,7 @@ namespace MowingforCookies
                 s.LoadContent(this.Content);
             }
             player.LoadContent(this.Content);
+            mower.LoadContent(this.Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -101,6 +104,8 @@ namespace MowingforCookies
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             player.Update(controls, gameTime);
+           
+            mower.Update(controls, patches2, gameTime);
 
             base.Update(gameTime);
         }
@@ -115,12 +120,15 @@ namespace MowingforCookies
             GraphicsDevice.Clear(Color.LimeGreen);
             spriteBatch.Begin();
             DrawBackground();
-            player.Draw(spriteBatch);
 
             foreach (Spot s in patches2)
             {
                 s.Draw(spriteBatch);
             }
+
+            //player.Draw(spriteBatch);
+            mower.Draw(spriteBatch);
+            
             spriteBatch.End();
 
 

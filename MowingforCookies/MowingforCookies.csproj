@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls.cs" />
+    <Compile Include="Mower.cs" />
     <Compile Include="Obstacle.cs" />
     <Compile Include="Spot.cs" />
     <Compile Include="Sprite.cs" />

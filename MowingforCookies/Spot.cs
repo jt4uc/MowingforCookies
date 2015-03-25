@@ -29,7 +29,7 @@ namespace MowingforCookies
         public int cbHeight = 100;
 
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained
-            , int cbX, int cbY, Obstacle ob)
+            , Obstacle ob)
         {
             this.x = x;
             this.y = y;

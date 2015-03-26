@@ -51,9 +51,9 @@ namespace MowingforCookies
             player = new Player(210, 210, 30, 30);
             patches2 = new List<Spot>();
 
-            for (int row = 100; row < 670; row += 110)
+            for (int row = 100; row < 670; row += 55)
             {
-                for (int col = 50; col < 300; col += 110)
+                for (int col = 50; col < 300; col += 55)
                 {
                     Spot t = new Spot(row, col, false, 3, 3);
                     patches2.Add(t);

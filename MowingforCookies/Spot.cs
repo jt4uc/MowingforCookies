@@ -26,8 +26,8 @@ namespace MowingforCookies
         //tileTexture: Texture2D
 
         private Rectangle collisionBox;
-        public int cbWidth = 100;
-        public int cbHeight = 100;
+        public int cbWidth = 50;
+        public int cbHeight = 50;
 
         public Spot(int x, int y, bool isTraversed, int travelCost, int cookiesGained
             , Obstacle ob)
@@ -69,7 +69,7 @@ namespace MowingforCookies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle(x, y, 100, 100), Color.White);
+            sb.Draw(image, new Rectangle(x, y, 50, 50), Color.White);
         }
 
         public bool mowerHasTraversed()

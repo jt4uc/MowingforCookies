@@ -61,7 +61,7 @@ namespace MowingforCookies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle(x, y, 90, 90), Color.White);
+            sb.Draw(image, new Rectangle(x, y, 40, 40), Color.White);
         }
 
 

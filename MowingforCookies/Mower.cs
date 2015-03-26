@@ -28,8 +28,8 @@ namespace MowingforCookies
             
             this.currentLocation = currentLocation;
             this.moveIndex = 0;
-            this.x = currentLocation.x + 25;
-            this.y = currentLocation.y + 25;
+            this.x = currentLocation.x;
+            this.y = currentLocation.y;
             this.cookies = cookies;
             
             //speed = 5;
@@ -83,21 +83,19 @@ namespace MowingforCookies
         {
             // Sideways Acceleration 
             if (controls.onPress(Keys.Right, Buttons.DPadRight)){
-                moveIndex += 3;
+                moveIndex += 5;
 
-                if (moveIndex > 17 || collisionObject(patches[moveIndex]) == false)
+                if (moveIndex > 54 || collisionObject(patches[moveIndex]) == false)
                 {
-                    moveIndex -= 3;
-                    x = x;
-                    y = y;
+                    moveIndex -= 5;
                 }
                 else
                 {
-                    x = patches[moveIndex].x + 25;
-                    y = patches[moveIndex].y + 25;
+                    x = patches[moveIndex].x;
+                    y = patches[moveIndex].y;
 
-                    collisionBox.X += patches[moveIndex].x + 25;
-                    collisionBox.Y += patches[moveIndex].y + 25;
+                    collisionBox.X += patches[moveIndex].x;
+                    collisionBox.Y += patches[moveIndex].y;
                 }
 
                 //this.x = patches[3].getBox().Center.X;
@@ -105,20 +103,18 @@ namespace MowingforCookies
             }
             else if (controls.onPress(Keys.Left, Buttons.DPadLeft))
             {
-                moveIndex -= 3;
+                moveIndex -= 5;
                 if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
                 {
-                    moveIndex += 3;
-                    x = x;
-                    y = y;
+                    moveIndex += 5;
                 }
                 else
                 {
-                    x = patches[moveIndex].x + 25;
-                    y = patches[moveIndex].y + 25;
+                    x = patches[moveIndex].x;
+                    y = patches[moveIndex].y;
 
-                    collisionBox.X += patches[moveIndex].x + 25;
-                    collisionBox.Y += patches[moveIndex].y + 25;
+                    collisionBox.X += patches[moveIndex].x;
+                    collisionBox.Y += patches[moveIndex].y;
                 }
                 
             }
@@ -126,18 +122,16 @@ namespace MowingforCookies
             {
                 moveIndex += 1;
 
-                if (collisionObject(patches[moveIndex]) == false)
+                if (moveIndex > 54 || collisionObject(patches[moveIndex]) == false)
                 {
                     moveIndex -= 1;
-                    x = x;
-                    y = y;
                 }
                 else { 
-                    x = patches[moveIndex].x + 25;
-                    y = patches[moveIndex].y + 25;
+                    x = patches[moveIndex].x;
+                    y = patches[moveIndex].y;
 
-                    collisionBox.X += patches[moveIndex].x + 25;
-                    collisionBox.Y += patches[moveIndex].y + 25;
+                    collisionBox.X += patches[moveIndex].x;
+                    collisionBox.Y += patches[moveIndex].y;
                 }
                 
             }
@@ -146,18 +140,16 @@ namespace MowingforCookies
             {
                 moveIndex -= 1;
                
-                if (collisionObject(patches[moveIndex]) == false)
+                if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
                 {
                     moveIndex += 1;
-                    x = x;
-                    y = y;
                 }
                 else { 
-                    x = patches[moveIndex].x + 25;
-                    y = patches[moveIndex].y + 25;
+                    x = patches[moveIndex].x;
+                    y = patches[moveIndex].y;
 
-                    collisionBox.X += patches[moveIndex].x + 25;
-                    collisionBox.Y += patches[moveIndex].y + 25;
+                    collisionBox.X += patches[moveIndex].x;
+                    collisionBox.Y += patches[moveIndex].y;
                 }
                 
             }

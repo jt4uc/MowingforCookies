@@ -13,7 +13,7 @@ namespace MowingforCookies
         public int x;
         public int y;
         public int moveIndex;
-        //private Rectangle collisionBox;
+        private Rectangle collisionBox;
         public Spot currentLocation;
         public int cookies;
         public Spot targetLocation;
@@ -34,7 +34,7 @@ namespace MowingforCookies
             
             //speed = 5;
             //movedX = 0;
-            //collisionBox = new Rectangle(x, y, width, height);
+            collisionBox = new Rectangle(x, y, 50, 50);
         }
 
         //public int getX()
@@ -85,8 +85,9 @@ namespace MowingforCookies
             if (controls.onPress(Keys.Right, Buttons.DPadRight)){
                 moveIndex += 3;
 
-                if (moveIndex > 17)
+                if (moveIndex > 17 || collisionObject(patches[moveIndex]) == false)
                 {
+                    moveIndex -= 3;
                     x = x;
                     y = y;
                 }
@@ -94,6 +95,9 @@ namespace MowingforCookies
                 {
                     x = patches[moveIndex].x + 25;
                     y = patches[moveIndex].y + 25;
+
+                    collisionBox.X += patches[moveIndex].x + 25;
+                    collisionBox.Y += patches[moveIndex].y + 25;
                 }
 
                 //this.x = patches[3].getBox().Center.X;
@@ -102,8 +106,9 @@ namespace MowingforCookies
             else if (controls.onPress(Keys.Left, Buttons.DPadLeft))
             {
                 moveIndex -= 3;
-                if (moveIndex < 0)
+                if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
                 {
+                    moveIndex += 3;
                     x = x;
                     y = y;
                 }
@@ -111,49 +116,65 @@ namespace MowingforCookies
                 {
                     x = patches[moveIndex].x + 25;
                     y = patches[moveIndex].y + 25;
+
+                    collisionBox.X += patches[moveIndex].x + 25;
+                    collisionBox.Y += patches[moveIndex].y + 25;
                 }
                 
             }
             else if (controls.onPress(Keys.Down, Buttons.DPadDown))
             {
                 moveIndex += 1;
-                x = patches[moveIndex].x + 25;
-                y = patches[moveIndex].y + 25;
+
+                if (collisionObject(patches[moveIndex]) == false)
+                {
+                    moveIndex -= 1;
+                    x = x;
+                    y = y;
+                }
+                else { 
+                    x = patches[moveIndex].x + 25;
+                    y = patches[moveIndex].y + 25;
+
+                    collisionBox.X += patches[moveIndex].x + 25;
+                    collisionBox.Y += patches[moveIndex].y + 25;
+                }
+                
             }
 
             else if (controls.onPress((Keys.Up), Buttons.DPadUp))
             {
                 moveIndex -= 1;
+               
+                if (collisionObject(patches[moveIndex]) == false)
+                {
+                    moveIndex += 1;
+                    x = x;
+                    y = y;
+                }
+                else { 
+                    x = patches[moveIndex].x + 25;
+                    y = patches[moveIndex].y + 25;
 
-                x = patches[moveIndex].x + 25;
-                y = patches[moveIndex].y + 25;
+                    collisionBox.X += patches[moveIndex].x + 25;
+                    collisionBox.Y += patches[moveIndex].y + 25;
+                }
+                
             }
-            //else if (controls.onRelease(Keys.Right, Buttons.DPadRight))
-            //    movedX = 0;
-            //if (controls.onPress(Keys.Left, Buttons.DPadLeft))
-            //    movedX = -speed;
-            //else if (controls.onRelease(Keys.Left, Buttons.DPadLeft))
-            //    movedX = 0;
-
-            //collisionBox.X += movedX;
-            //spriteX += movedX;
-
-            //// Vertical Acceleration
-            //if (controls.onPress(Keys.Up, Buttons.DPadUp))
-            //    movedY = -speed;
-            //else if (controls.onRelease(Keys.Up, Buttons.DPadUp))
-            //    movedY = 0;
-            //if (controls.onPress(Keys.Down, Buttons.DPadDown))
-            //    movedY = speed;
-            //else if (controls.onRelease(Keys.Down, Buttons.DPadDown))
-            //    movedY = 0;
-
-            //collisionBox.Y += movedY;
-            //spriteY += movedY;
 
         }
 
-        //collisionObstacle
+        public bool collisionObject(Spot objectSpot)
+        {
+            if (objectSpot.canTraverse == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         //collisionEnemy
         //updateCookieAmount
     }

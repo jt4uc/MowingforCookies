@@ -34,6 +34,7 @@ namespace MowingforCookies
             this.x = currentLocation.x;
             this.y = currentLocation.y;
             this.cookies = cookies;
+            this.alize = true;
             
             //speed = 5;
             //movedX = 0;
@@ -200,7 +201,15 @@ namespace MowingforCookies
             }
             else
             {
-                return false;
+                if (objectSpot.getEnemy() != null)
+                {
+                    alize = false;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         //collisionEnemy

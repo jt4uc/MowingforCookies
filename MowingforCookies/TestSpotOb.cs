@@ -28,6 +28,9 @@ namespace MowingforCookies
         Controls controls;
         List<Spot> patches2;
         Mower mower;
+        Enemy gnome1;
+
+
 
         Texture2D patch;
 
@@ -49,6 +52,7 @@ namespace MowingforCookies
 
             Window.Title = "TEST";
             player = new Player(210, 210, 30, 30);
+           
             patches2 = new List<Spot>();
 
             for (int row = 100; row < 670; row += 55)
@@ -65,9 +69,13 @@ namespace MowingforCookies
             Obstacle test = new Obstacle("tree");
             patches2[2].setObstacle(test);
             test.setSpot(patches2[2]);
-            Obstacle test2 = new Obstacle("gravel");
+            Obstacle test2 = new Obstacle("bush");
             patches2[3].setObstacle(test2);
             test2.setSpot(patches2[3]);
+
+            gnome1 = new Enemy(patches2[15], 3);
+            patches2[15].setEnemy(gnome1);
+
 
             base.Initialize();
             controls = new Controls();
@@ -93,6 +101,7 @@ namespace MowingforCookies
             }
             player.LoadContent(this.Content);
             mower.LoadContent(this.Content);
+            gnome1.LoadContent(this.Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -118,7 +127,12 @@ namespace MowingforCookies
                 Exit();
             player.Update(controls, gameTime);
             mower.Update(controls, patches2, gameTime);
+            gnome1.Update(mower, controls, patches2, gameTime);
             base.Update(gameTime);
+            if (mower.alize == false)
+            {
+                Exit();
+            }
         }
 
         /// <summary>
@@ -141,7 +155,13 @@ namespace MowingforCookies
                 }
             }
             mower.Draw(spriteBatch);
+            gnome1.Draw(spriteBatch);
+
+
+
+
             spriteBatch.End();
+
 
 
             base.Draw(gameTime);

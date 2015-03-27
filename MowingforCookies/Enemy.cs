@@ -27,14 +27,14 @@ namespace MowingforCookies
 
             this.currentLocation = currentLocation;
             this.moveIndex = 0;
-            this.x = currentLocation.x + 25;
-            this.y = currentLocation.y + 25;
+            this.x = currentLocation.x;
+            this.y = currentLocation.y;
 
         }
 
         public void LoadContent(ContentManager content)
         {
-            image = content.Load<Texture2D>("gnome.gif");
+            image = content.Load<Texture2D>("gravel.png");
         }
 
         public void Draw(SpriteBatch sb)
@@ -42,7 +42,7 @@ namespace MowingforCookies
             sb.Draw(image, new Rectangle(x, y, 48, 50), Color.White);
         }
 
-        public void Update(Controls controls, List<Spot> patches, GameTime gameTime)
+        public void Update(Mower mower, Controls controls, List<Spot> patches, GameTime gameTime)
         {
             Move(mower, patches);
         }

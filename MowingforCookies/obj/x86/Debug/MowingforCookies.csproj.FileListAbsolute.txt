@@ -49,3 +49,10 @@ C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\Mowing
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\water.png
 C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.exe
 C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.pdb
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\bush.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\grandma.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\gravel.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Oak-Tree-Sprite.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\PlayerSquare.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\water.png
+C:\Users\Alice\Dropbox\game\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\gnome.png

@@ -41,11 +41,9 @@
     <Compile Include="Obstacle.cs" />
     <Compile Include="Spot.cs" />
     <Compile Include="Sprite.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="MowingforCookiesMain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestSpotOb.cs" />
+    <Compile Include="MowingforCookiesMainGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -73,7 +71,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gnome.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\grandma.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -18,7 +18,7 @@ namespace MowingforCookies
         [STAThread]
         static void Main()
         {
-            using (var game = new MowingforCookiesMainGame())
+            using (var game = new MainGame())
                 game.Run();
         }
     }

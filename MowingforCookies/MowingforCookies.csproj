@@ -43,7 +43,7 @@
     <Compile Include="Sprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MowingforCookiesMainGame.cs" />
+    <Compile Include="MainGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">

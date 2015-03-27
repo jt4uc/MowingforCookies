@@ -12,6 +12,9 @@ namespace MowingforCookies
     {
         public int x;
         public int y;
+        public int dir; //values 0 through 4.  Should be a typedef.
+        const int time_between_moves = 10; //number of game loops between calling move
+        public int current_time = 0; //tracks game loops
         public int moveIndex;
         private Rectangle collisionBox;
         public Spot currentLocation;
@@ -76,13 +79,44 @@ namespace MowingforCookies
 
         public void Update(Controls controls, List<Spot> patches, GameTime gameTime)
         {
-            Move(controls, patches);
+            if (controls.onPress(Keys.Right, Buttons.DPadRight))
+            {
+                dir = 1;
+            }
+            else if (controls.onPress(Keys.Left, Buttons.DPadLeft))
+            {
+                dir = 2;
+            }
+            else if (controls.onPress(Keys.Down, Buttons.DPadDown))
+            {
+                dir = 3;
+            }
+            else if (controls.onPress(Keys.Up, Buttons.DPadUp))
+            {
+                dir = 4;
+            }
+            else
+            {
+
+            }
+
+            if (current_time >= time_between_moves)
+            {
+                Move(dir, patches);
+                current_time = 0;
+            }
+            else
+            {
+                current_time++;
+            }
+
         }
 
-        public void Move(Controls controls, List<Spot> patches)
+        public void Move(int direction, List<Spot> patches)
         {
             // Sideways Acceleration 
-            if (controls.onPress(Keys.Right, Buttons.DPadRight)){
+            if (direction == 1)
+            {
                 moveIndex += 5;
 
                 if (moveIndex > 54 || collisionObject(patches[moveIndex]) == false)
@@ -101,7 +135,7 @@ namespace MowingforCookies
                 //this.x = patches[3].getBox().Center.X;
                 //this.y = patches[3].getBox().Center.Y;
             }
-            else if (controls.onPress(Keys.Left, Buttons.DPadLeft))
+            else if (direction == 2)
             {
                 moveIndex -= 5;
                 if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
@@ -116,9 +150,9 @@ namespace MowingforCookies
                     collisionBox.X += patches[moveIndex].x;
                     collisionBox.Y += patches[moveIndex].y;
                 }
-                
+
             }
-            else if (controls.onPress(Keys.Down, Buttons.DPadDown))
+            else if (direction == 3)
             {
                 moveIndex += 1;
 
@@ -126,32 +160,34 @@ namespace MowingforCookies
                 {
                     moveIndex -= 1;
                 }
-                else { 
+                else
+                {
                     x = patches[moveIndex].x;
                     y = patches[moveIndex].y;
 
                     collisionBox.X += patches[moveIndex].x;
                     collisionBox.Y += patches[moveIndex].y;
                 }
-                
+
             }
 
-            else if (controls.onPress((Keys.Up), Buttons.DPadUp))
+            else if (direction == 4)
             {
                 moveIndex -= 1;
-               
+
                 if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
                 {
                     moveIndex += 1;
                 }
-                else { 
+                else
+                {
                     x = patches[moveIndex].x;
                     y = patches[moveIndex].y;
 
                     collisionBox.X += patches[moveIndex].x;
                     collisionBox.Y += patches[moveIndex].y;
                 }
-                
+
             }
 
         }

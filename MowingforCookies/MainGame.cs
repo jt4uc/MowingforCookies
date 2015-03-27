@@ -14,7 +14,7 @@ namespace MowingforCookies
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class MowingforCookiesMainGame : Game
+    public class MainGame : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -33,7 +33,7 @@ namespace MowingforCookies
 
         Texture2D patch;
 
-        public MowingforCookiesMainGame()
+        public MainGame()
             : base()
         {
             graphics = new GraphicsDeviceManager(this); /// default is 800x600

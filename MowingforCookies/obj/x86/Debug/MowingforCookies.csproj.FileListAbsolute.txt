@@ -47,3 +47,5 @@ C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\Mowing
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\Oak-Tree-Sprite.png
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\PlayerSquare.png
 C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\water.png
+C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.exe
+C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.pdb

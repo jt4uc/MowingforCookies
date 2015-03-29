@@ -6,6 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+bin/
+obj/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -78,8 +80,6 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
-bin/
-obj/
 *.cachefile
 
 # Visual Studio profiler

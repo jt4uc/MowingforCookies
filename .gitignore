@@ -78,6 +78,8 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
+bin/
+obj/
 *.cachefile
 
 # Visual Studio profiler

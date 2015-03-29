@@ -24,6 +24,9 @@ bld/
 *.cache
 *.obj
 *.exe
+**/*.suo
+**/*.exe
+**/*.cache
 
 # Visual Studo 2015 cache/options directory
 .vs/

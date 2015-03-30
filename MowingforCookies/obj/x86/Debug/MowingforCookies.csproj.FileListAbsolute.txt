@@ -76,3 +76,4 @@ C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\bin\Win
 C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Tao.Sdl.dll
 C:\Users\Tyty\Dropbox\MowingforCookies\MowingforCookies\MowingforCookies\obj\x86\Debug\MowingforCookies.csprojResolveAssemblyReference.cache
+C:\Users\Faye\Documents\Classes\Semester 8 (Spring 2015)\MowingforCookies\MowingforCookies\bin\WindowsGL\Debug\Content\gnome.png

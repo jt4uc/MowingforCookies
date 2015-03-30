@@ -157,7 +157,7 @@ namespace MowingforCookies
             {
                 moveIndex += 1;
 
-                if (moveIndex > 54 || collisionObject(patches[moveIndex]) == false)
+                if (moveIndex % 5 == 0 || collisionObject(patches[moveIndex]) == false)
                 {
                     moveIndex -= 1;
                 }
@@ -176,7 +176,7 @@ namespace MowingforCookies
             {
                 moveIndex -= 1;
 
-                if (moveIndex < 0 || collisionObject(patches[moveIndex]) == false)
+                if ((moveIndex+1) % 5 == 0 || collisionObject(patches[moveIndex]) == false)
                 {
                     moveIndex += 1;
                 }

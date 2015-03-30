@@ -34,7 +34,7 @@ namespace MowingforCookies
 
         public void LoadContent(ContentManager content)
         {
-            image = content.Load<Texture2D>("gravel.png");
+            image = content.Load<Texture2D>("grandma.png");
         }
 
         public void Draw(SpriteBatch sb)

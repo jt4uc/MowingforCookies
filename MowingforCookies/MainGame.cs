@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using TiledSharp;
 #endregion
 
 namespace MowingforCookies
@@ -19,7 +20,7 @@ namespace MowingforCookies
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        // for the background
+        // for the background - prolly not needed
         Texture2D background;
         int screenWidth;
         int screenHeight;
@@ -28,9 +29,6 @@ namespace MowingforCookies
         List<Spot> patches2;
         Mower mower;
         Enemy gnome1;
-
-
-
         Texture2D patch;
 
         public MainGame()
@@ -48,31 +46,42 @@ namespace MowingforCookies
         /// </summary>
         protected override void Initialize()
         {
+            // Tiled Testing
+            var map = new TmxMap("someMap.tmx");
+
+            // example code
+            //var map = new TmxMap("someMap.tmx");
+            //var version = map.Version;
+            //var myTileset = map.Tilesets["myTileset"];
+            //var myLayer = map.Layers[2];
+            //var hiddenChest = map.ObjectGroups["Chests"].Objects["hiddenChest"];
+            // Tiled Testing
+
 
             Window.Title = "TEST";
            
-            patches2 = new List<Spot>();
+            //patches2 = new List<Spot>();
 
-            for (int row = 100; row < 670; row += 55)
-            {
-                for (int col = 50; col < 300; col += 55)
-                {
-                    Spot t = new Spot(row, col, false, 3, 3);
-                    patches2.Add(t);
+            //for (int row = 100; row < 670; row += 55)
+            //{
+            //    for (int col = 50; col < 300; col += 55)
+            //    {
+            //        Spot t = new Spot(row, col, false, 3, 3);
+            //        patches2.Add(t);
 
-                }
-            }
-            mower = new Mower(patches2[0], 0);
+            //    }
+            //}
+            //mower = new Mower(patches2[0], 0);
 
-            Obstacle test = new Obstacle("tree");
-            patches2[2].setObstacle(test);
-            test.setSpot(patches2[2]);
-            Obstacle test2 = new Obstacle("bush");
-            patches2[3].setObstacle(test2);
-            test2.setSpot(patches2[3]);
+            //Obstacle test = new Obstacle("tree");
+            //patches2[2].setObstacle(test);
+            //test.setSpot(patches2[2]);
+            //Obstacle test2 = new Obstacle("bush");
+            //patches2[3].setObstacle(test2);
+            //test2.setSpot(patches2[3]);
 
-            gnome1 = new Enemy(patches2[15], 3);
-            patches2[15].setEnemy(gnome1);
+            //gnome1 = new Enemy(patches2[15], 3);
+            //patches2[15].setEnemy(gnome1);
 
 
             base.Initialize();
